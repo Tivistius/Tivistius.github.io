@@ -7,7 +7,7 @@
     let text ='';
 
     function schr(){
-        window.location.href = `/musicians/artistsList/${text}#`;
+        window.location.href = `/#/artistsList/${text}`;
     }
 
     const Search = () => {

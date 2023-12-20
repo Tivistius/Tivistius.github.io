@@ -25,7 +25,7 @@ const BestOfTheDay = (props) => {
                     </div>
                     <p className={"shortDescription"}>{shortInfo}</p>
                     <div className={"buttonMore"}>
-                        <Button href={`/musicians/artist/${props.toShow.id}`} variant="contained" color="secondary" className ='Button'>
+                        <Button href={`#/artist/${props.toShow.id}`} variant="contained" color="secondary" className ='Button'>
                             <h1 style={{margin: '0px',fontSize: '2vw'}}>{t('more')}</h1>
                         </Button>
 

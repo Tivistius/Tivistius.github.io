@@ -1,13 +1,28 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import ArtistItem from "../components/artistItem";
 import artistArray from "../test_data/test_data";
 import '../styles/artistList.css'
 import axios from "axios";
 import Search from "../functions"
-import {useParams} from "react-router-dom";
+import {useParams, useLocation} from "react-router-dom";
 import async from "async";
 
 const ArtistsList = () => {
+    const prevHashRef = useRef();
+
+    useEffect(() => {
+        const handleHashChange = () => {
+            const currentHash = window.location.hash;
+            if (currentHash !== prevHashRef.current) {
+                prevHashRef.current = currentHash;
+                window.location.reload();
+            }
+        };
+        window.addEventListener('hashchange', handleHashChange);
+        return () => {
+            window.removeEventListener('hashchange', handleHashChange);
+        };
+    }, []);
     const { id } = useParams();
 
     const fetchData = async () => {

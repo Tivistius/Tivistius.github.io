@@ -1,12 +1,13 @@
 import React, {useEffect} from 'react';
 import ArtistsList from "./pages/artistsList";
 import Artist from "./pages/artist";
-import {BrowserRouter as Router, Navigate, Route, Routes} from "react-router-dom";
+import {HashRouter as Router, Navigate, Route, Routes} from "react-router-dom";
 import Footer from "./components/footer";
 import FullHeader from "./components/FullHeader";
 import PageAbout from "./pages/PageAbout";
 import {I18nextProvider} from "react-i18next";
-import i18next from './i18n'
+import i18next from './i18n';
+import Scroller from './components/Scroller';
 
 function App() {
     useEffect(() => {
@@ -21,12 +22,12 @@ function App() {
       <div className= "main">
           <FullHeader/>
           <Router>
+              <Scroller/>
               <Routes>
-                  <Route path={"/musicians/about"} element={<PageAbout/>} />
-                  <Route path="/musicians/artist/:id" element={<Artist />} />
-                  <Route path="/musicians/artistsList/:id" element={<ArtistsList />} />
-                  <Route path="/musicians/artistsList" element={<ArtistsList />} />
-                  <Route path="*" element={<Navigate to="/musicians/about" />} />
+                  <Route path="/" element={<PageAbout/>} />
+                  <Route path="/artist/:id" element={<Artist />} />
+                  <Route path="/artistsList/:id" element={<ArtistsList />} />
+                  <Route path="/artistsList" element={<ArtistsList />} />
               </Routes>
           </Router>
           {/*<ArtistsList/>*/}

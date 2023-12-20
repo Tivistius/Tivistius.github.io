@@ -24,7 +24,7 @@ const ArtistItem = (props) => {
                     <p className={"shortDescription"}>{props.artist.attribute}</p>
                     <div className={"buttonMore"}>
                         <ThemeProvider theme={theme}>
-                            <Button variant="contained" color="secondary" href={`/musicians/artist/${props.artist.id}`}>
+                            <Button variant="contained" color="secondary" href={`#/artist/${props.artist.id}`}>
                                 <h1 style={{margin: '0px', fontSize: '1.3vw'}}>{t('more')}</h1>
                             </Button>
                         </ThemeProvider>

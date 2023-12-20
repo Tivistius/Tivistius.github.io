@@ -15,10 +15,13 @@ const SearchSection = () => {
 
     return (
         <div className= 'SearchSection'>
-            <img className= 'Logo'
-                src="/images/logo.png"
-                alt=":("
-            />
+            <a className="a" href="/your-route">
+                <img className="Logo"
+                    src="/images/logo.png"
+                    alt=":("
+                />
+            </a>
+
             <div className= 'SearchContainer'>
                 <div className= 'LanguageChanger'>
                     <Button onClick={() => changeLanguage('en')} variant="contained" style={{ width: '22%', height: '90%', fontSize: '2.1vw', padding: '0', minWidth: '0', minHeight: '0', borderRadius: '2vw' }}>Eng</Button>
